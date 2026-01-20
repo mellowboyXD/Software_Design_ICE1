@@ -36,12 +36,12 @@ public class CardTrick {
 		for (int i = 0; i < magicHand.length; ++i) {
 			if (magicHand[i].equals(luckyCard)) {
 				found = true;
-				System.out.println("Lucky Card is found in magicHand");
+				System.out.println("Lucky Card is found in magicHand. You WON.");
 				break;
 			}
 		}
 		if (!found) {
-			System.out.println("Lucky Card is NOT in magic hand");
+			System.out.println("Lucky Card is NOT in magic hand. YOU LOST!");
 		}
 
 		//insert code to ask the user for Card value and suit, create their card
