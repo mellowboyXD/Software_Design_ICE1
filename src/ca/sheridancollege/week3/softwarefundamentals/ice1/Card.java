@@ -20,6 +20,14 @@ public class Card {
    private int value;//1-13
 
    public static final String [] SUITS = {"hearts", "diamonds", "spades", "clubs"};
+
+   public Card() {}
+
+   public Card(String suit, int value) {
+	   this.suit = suit;
+	   this.value = value;
+   }
+
     /**
      * @return the suit
      */
@@ -47,7 +55,16 @@ public class Card {
     public void setValue(int value) {
         this.value = value;
     }
-   
-   
-    
+  
+
+    @Override
+    public boolean equals(Object obj) {
+	    if (this == obj)
+		    return true;
+	    if (!(obj instanceof Card))
+		    return false;
+
+	    Card card = (Card) obj;
+	    return card.getValue() == value && suit.equalsIgnoreCase(card.getSuit());
+    }
 }
