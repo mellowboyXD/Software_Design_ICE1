@@ -32,6 +32,18 @@ public class CardTrick {
 			magicHand[i] = c;
 		}
 
+		boolean found = false;
+		for (int i = 0; i < magicHand.length; ++i) {
+			if (magicHand[i].equals(luckyCard)) {
+				found = true;
+				System.out.println("Lucky Card is found in magicHand");
+				break;
+			}
+		}
+		if (!found) {
+			System.out.println("Lucky Card is NOT in magic hand");
+		}
+
 		//insert code to ask the user for Card value and suit, create their card
 		// and search magicHand here
 		//Then report the result here
@@ -59,7 +71,7 @@ public class CardTrick {
 			}
 		} while (val < 0 || val > 13);
 
-		boolean found = false;
+		found = false;
 		for (int i = 0; i < magicHand.length; ++i) {
 			if (magicHand[i].equals(new Card(suit, val))) {
 				System.out.println("Found in magic hand");
